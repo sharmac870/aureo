@@ -24,6 +24,9 @@
       <a class="logo" href="#top">Aureo<span>Travels</span></a>
       <nav aria-label="Primary navigation">
         <a href="#stories">Stories</a>
+        <a href="#stays">Stays</a>
+        <a href="#deals">Deals</a>
+        <a href="#district">District</a>
         <a href="#cities">Cities</a>
         <a href="#planner">Itinerary</a>
         <a href="#videos">Videos</a>
@@ -66,6 +69,18 @@
               <input id="hero-end-date" type="date" aria-label="End date" />
             </div>
 
+            <label for="hero-guests" class="sr-only">Guests</label>
+            <div class="hero-field">
+              <span class="field-label">Guests</span>
+              <select id="hero-guests" name="hero-guests" aria-label="Select guests">
+                <option value="2" selected>2 guests</option>
+                <option value="1">1 guest</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+                <option value="5">5+ guests</option>
+              </select>
+            </div>
+
             <button class="btn btn-primary" id="hero-start-btn" type="button">
               Start Journey
             </button>
@@ -77,12 +92,72 @@
         </div>
       </section>
 
+      <section class="booking-signals" aria-label="Trust highlights">
+        <article>
+          <h3>50K+ verified traveler reviews</h3>
+          <p>Transparent ratings from real stays across Rajasthan and the Golden Triangle.</p>
+        </article>
+        <article>
+          <h3>Free cancellation on selected stays</h3>
+          <p>Lock in value now and keep flexibility for changing travel plans.</p>
+        </article>
+        <article>
+          <h3>Price confidence</h3>
+          <p>See discount tags and member offers in one clear comparison view.</p>
+        </article>
+      </section>
+
+      <section id="stays" class="section" aria-labelledby="stays-title">
+        <div class="section-head">
+          <p class="eyebrow">Stay Marketplace</p>
+          <h2 id="stays-title">Compare stays fast with smart filters and sorted results.</h2>
+        </div>
+        <div class="stays-toolbar">
+          <div class="field-stack">
+            <label for="stays-city">Destination</label>
+            <select id="stays-city" name="stays-city"></select>
+          </div>
+          <div class="field-stack">
+            <label for="stays-sort">Sort by</label>
+            <select id="stays-sort" name="stays-sort">
+              <option value="recommended" selected>Recommended</option>
+              <option value="priceLow">Price: low to high</option>
+              <option value="priceHigh">Price: high to low</option>
+              <option value="ratingHigh">Guest rating</option>
+            </select>
+          </div>
+          <div class="field-stack">
+            <label for="stays-budget">Max budget (INR)</label>
+            <input id="stays-budget" name="stays-budget" type="range" min="2500" max="22000" step="500" value="22000" />
+            <p class="budget-note" id="stays-budget-note"></p>
+          </div>
+        </div>
+        <div class="stays-chips" role="group" aria-label="Stay filters">
+          <label><input type="checkbox" id="filter-cancel" /> Free cancellation</label>
+          <label><input type="checkbox" id="filter-breakfast" /> Breakfast included</label>
+          <label><input type="checkbox" id="filter-paylater" /> Pay at property</label>
+        </div>
+        <p class="stays-meta" id="stays-meta" aria-live="polite"></p>
+        <div class="stays-grid" id="stays-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="deals" class="section" aria-labelledby="deals-title">
+        <div class="section-head">
+          <p class="eyebrow">Deals Aggregator</p>
+          <h2 id="deals-title">Review selected deals and complete your booking on Aureo Travels.</h2>
+        </div>
+        <p class="deals-meta" id="deals-meta"></p>
+        <div class="deals-grid" id="deals-grid" aria-live="polite"></div>
+        <p class="booking-confirmation" id="booking-confirmation" aria-live="polite"></p>
+      </section>
+
       <section id="stories" class="section stories" aria-labelledby="stories-title">
         <div class="section-head">
           <p class="eyebrow">Vacation Mood</p>
           <h2 id="stories-title">Celebrate every stop of your journey.</h2>
         </div>
         <div class="story-grid" id="story-grid"></div>
+        <div class="story-insights" id="story-insights" aria-live="polite"></div>
       </section>
 
       <section id="cities" class="section" aria-labelledby="cities-title">
@@ -126,6 +201,7 @@
         </form>
         <div class="route-chip" id="route-chip" aria-live="polite"></div>
         <div class="itinerary-results" id="itinerary-results" aria-live="polite"></div>
+        <div class="excursions-results" id="excursions-results" aria-live="polite"></div>
       </section>
 
       <section id="videos" class="section" aria-labelledby="video-title">
@@ -139,11 +215,84 @@
         </div>
         <div class="video-grid" id="video-grid"></div>
       </section>
+
+      <section id="district" class="section" aria-labelledby="district-title">
+        <div class="section-head">
+          <p class="eyebrow">District Integration</p>
+          <h2 id="district-title">Open District instantly for your selected destination.</h2>
+        </div>
+        <div class="district-compact">
+          <p class="district-location" id="district-location">District location: Delhi</p>
+          <a
+            id="district-cta"
+            class="btn btn-primary"
+            href="https://www.district.in/search?query=Delhi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open District for Delhi
+          </a>
+        </div>
+      </section>
+
+      <section id="offers" class="section" aria-labelledby="offers-title">
+        <div class="section-head">
+          <p class="eyebrow">Investor-Grade Growth Features</p>
+          <h2 id="offers-title">Offer modules designed for conversion and repeat booking.</h2>
+        </div>
+        <div class="offers-grid" id="offers-grid"></div>
+      </section>
     </main>
 
     <footer>
       <p>© 2026 Aureo Travels. Crafted for joyful Golden Triangle vacations.</p>
     </footer>
+
+    <dialog id="booking-modal" class="booking-modal">
+      <form method="dialog" class="booking-modal-close">
+        <button type="submit" class="btn">Close</button>
+      </form>
+      <div class="booking-modal-content">
+        <h3 id="modal-stay-name">Book Hotel</h3>
+        <p id="modal-stay-price"></p>
+        <form id="booking-form" class="deal-booking-form">
+          <input type="hidden" id="modal-stay-id" name="stay-id" />
+          <input type="hidden" id="modal-stay-price-input" name="stay-price" />
+
+          <div>
+            <label for="modal-checkin">Check-in</label>
+            <input id="modal-checkin" name="checkin" type="date" required />
+          </div>
+          <div>
+            <label for="modal-checkout">Check-out</label>
+            <input id="modal-checkout" name="checkout" type="date" required />
+          </div>
+          <div>
+            <label for="modal-guests">Guests</label>
+            <select id="modal-guests" name="guests">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <div class="wide">
+            <label for="modal-name">Full Name</label>
+            <input id="modal-name" name="name" type="text" placeholder="Traveler name" required />
+          </div>
+          <div>
+            <label for="modal-email">Email</label>
+            <input id="modal-email" name="email" type="email" placeholder="name@email.com" required />
+          </div>
+          <div>
+            <label for="modal-phone">Phone</label>
+            <input id="modal-phone" name="phone" type="tel" placeholder="+91-00000-00000" required />
+          </div>
+          <button class="btn btn-primary wide" type="submit">Confirm Booking</button>
+        </form>
+      </div>
+    </dialog>
 
     <script src="app.js"></script>
   </body>
