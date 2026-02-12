@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aureo Travels | Golden Triangle Escapes</title>
+    <meta
+      name="description"
+      content="Celebrate travel across Delhi, Agra, Jaipur, Jodhpur and Udaipur with immersive stays, food trails, shopping guides, and day-wise itineraries."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="watermark" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="logo" href="#top">Aureo<span>Travels</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="#stories">Stories</a>
+        <a href="#cities">Cities</a>
+        <a href="#planner">Itinerary</a>
+        <a href="#videos">Videos</a>
+      </nav>
+      <a href="#planner" class="mini-cta">Plan My Trip</a>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-text">
+          <p class="eyebrow">Golden Triangle • Rajasthan • Agra • Delhi</p>
+          <h1 id="hero-title">Your vacation starts the moment you land here.</h1>
+          <p>
+            Golden mornings, colorful bazaars, iconic monuments, and unforgettable
+            local food trails. Explore the Golden Triangle like your holiday is already in motion.
+          </p>
+          <div class="hero-search" role="group" aria-label="Trip starter options">
+            <label for="hero-destination" class="sr-only">Destination</label>
+            <div class="hero-field">
+              <span class="field-label">Destination</span>
+              <select id="hero-destination" name="hero-destination" aria-label="Select destination">
+                <option value="" selected>Select destination</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Agra">Agra</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Jodhpur">Jodhpur</option>
+                <option value="Udaipur">Udaipur</option>
+              </select>
+            </div>
+
+            <label for="hero-start-date" class="sr-only">Start date</label>
+            <div class="hero-field">
+              <span class="field-label">Start date</span>
+              <input id="hero-start-date" type="date" aria-label="Start date" />
+            </div>
+
+            <label for="hero-end-date" class="sr-only">End date</label>
+            <div class="hero-field">
+              <span class="field-label">End date</span>
+              <input id="hero-end-date" type="date" aria-label="End date" />
+            </div>
+
+            <button class="btn btn-primary" id="hero-start-btn" type="button">
+              Start Journey
+            </button>
+          </div>
+          <p class="hero-validation" id="hero-validation" aria-live="polite"></p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <article class="hero-image"></article>
+        </div>
+      </section>
+
+      <section id="stories" class="section stories" aria-labelledby="stories-title">
+        <div class="section-head">
+          <p class="eyebrow">Vacation Mood</p>
+          <h2 id="stories-title">Celebrate every stop of your journey.</h2>
+        </div>
+        <div class="story-grid" id="story-grid"></div>
+      </section>
+
+      <section id="cities" class="section" aria-labelledby="cities-title">
+        <div class="section-head">
+          <p class="eyebrow">City Playbooks</p>
+          <h2 id="cities-title">Hotels, places, local food, and shopping in one tap.</h2>
+        </div>
+        <div class="city-tabs" id="city-tabs" role="tablist" aria-label="City selector"></div>
+        <div class="city-content" id="city-content" role="tabpanel" tabindex="0" aria-live="polite"></div>
+      </section>
+
+      <section id="planner" class="section" aria-labelledby="planner-title">
+        <div class="section-head">
+          <p class="eyebrow">Day-Wise Itinerary</p>
+          <h2 id="planner-title">Choose days and get a route with food and shopping built in.</h2>
+          <p class="planner-destination" id="planner-destination"></p>
+        </div>
+        <form class="planner-form" id="planner-form">
+          <label for="trip-days">Travel days</label>
+          <select id="trip-days" name="trip-days">
+            <option value="3" selected>3 days</option>
+            <option value="4">4 days</option>
+            <option value="5">5 days</option>
+            <option value="6">6 days</option>
+            <option value="7">7 days</option>
+            <option value="8">8 days</option>
+            <option value="9">9 days</option>
+            <option value="10">10 days</option>
+            <option value="11">11 days</option>
+            <option value="12">12 days</option>
+          </select>
+
+          <label for="trip-style">Travel style</label>
+          <select id="trip-style" name="trip-style">
+            <option value="balanced" selected>Balanced</option>
+            <option value="luxury">Luxury</option>
+            <option value="culture">Culture + Food</option>
+          </select>
+
+          <button type="submit" class="btn btn-primary">Show My Itinerary</button>
+        </form>
+        <div class="route-chip" id="route-chip" aria-live="polite"></div>
+        <div class="itinerary-results" id="itinerary-results" aria-live="polite"></div>
+      </section>
+
+      <section id="videos" class="section" aria-labelledby="video-title">
+        <div class="section-head">
+          <p class="eyebrow">Watch Before You Go</p>
+          <h2 id="video-title">Curated YouTube travel videos by region.</h2>
+        </div>
+        <div class="video-filter-wrap">
+          <label for="video-city">Region</label>
+          <select id="video-city" name="video-city"></select>
+        </div>
+        <div class="video-grid" id="video-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Aureo Travels. Crafted for joyful Golden Triangle vacations.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
